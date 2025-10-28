@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Portfolio</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("ho.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glass effect for About Box */
+.about-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 60%;
+  max-width: 650px;
+  text-align: center;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
+  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+}
+
+.about-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px 8px rgba(135, 206, 250, 0.6);
+  border: 1px solid rgba(135, 206, 250, 0.8);
+}
+
+/* Typing effect for heading */
+.about-box h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(20, end) forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Fade-in for paragraph */
+.about-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <div class="about-box">
+    <h1>About Me</h1>
+    <p>Hello! My name is <b>Somajit</b>.  
+    I am passionate about <b>Web Development, Java Programming</b>, and building creative projects.  
+    Currently, I am learning and improving my skills in modern web technologies and software development.</p>
+  </div>
+</section>
+</body>
+</html>

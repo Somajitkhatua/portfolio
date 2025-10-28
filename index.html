@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somajit Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+
+  /* Full-page background image */
+  background: url("about.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+}
+
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 60px;
+      background-color: rgb(18, 18, 64);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    /* ✅ Navbar hover sky blue */
+    nav ul li a:hover {
+      color: skyblue;
+      background: rgba(135, 206, 250, 0.2);
+      box-shadow: 0px 0px 10px skyblue;
+      font-size: 1.01rem;
+    }
+
+    .left {
+      font-size: 1.5rem;
+    }
+
+    main hr {
+      border: 0;
+      background-color: #9c97f1;
+      height: 1.2px;
+      margin: 60px 84px;
+    }
+
+    /* Hero Section */
+    .firstsection {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 100px 5%;
+      flex-wrap: nowrap;
+    }
+
+    .leftsection {
+      font-size: 2rem;
+      width: 50%;
+    }
+
+    .leftsection .buttons {
+      padding: 30px 0;
+    }
+
+    .leftsection .btn {
+      padding: 12px 20px;
+      margin-right: 10px;
+      background: #1e2167;
+      color: wheat;
+      border: 2px solid wheat;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .leftsection .btn:hover {
+      background: wheat;
+      color: #1e2167;
+    }
+
+    .rightsection {
+      width: 40%;
+      text-align: center;
+      position: relative;
+    }
+
+    /* ✅ Glowing circular background */
+    .rightsection::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle at center, rgba(164, 88, 234, 0.3), transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .rightsection img {
+      width: 100%;
+      max-width: 280px;
+      height: 280px;
+      border-radius: 50%; /* ✅ perfect circle */
+      margin: 20px auto;
+      display: block;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* depth */
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+    }
+
+    /* ✅ Profile image hover */
+    .rightsection img:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 0px 30px skyblue;
+      border: 3px solid skyblue;
+    }
+
+    .purple {
+      color: rgb(164, 88, 234);
+    }
+
+    .text-gray {
+      color: gray;
+    }
+
+    #element {
+      color: skyblue;
+    }
+
+    /* Work Experience Section */
+    .secondsection {
+      max-width: 90vw;
+      margin: auto;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+
+    .secondsection h1 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 60px auto;
+      padding: 0;
+      width: 80%;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: white;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: left;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px skyblue;
+}
+
+    .timeline-item img {
+      width: 30px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: skyblue;
+    }
+
+    .timeline-item p {
+      font-size: 14px;
+      color: gray;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 55%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .firstsection {
+        flex-direction: column;
+        text-align: center;
+      }
+      .leftsection, .rightsection {
+        width: 100%;
+      }
+      .timeline::before {
+        left: 10px;
+      }
+      .timeline-item {
+        width: 90%;
+        left: 20px !important;
+      }
+    }
+
+    /* New Sections */
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: skyblue;
+    }
+
+    section p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 18px;
+      color: lightgray;
+    }
+
+    /* Contact Links */
+    .contact-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 18px;
+      border: 2px solid skyblue;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: skyblue;
+      color: white;
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0e0e1a;
+    }
+
+    .footer {
+      display: flex;
+      padding: 23px 122px;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer>div {
+      width: 223px;
+    }
+
+    footer .footer-rights {
+      text-align: center;
+      color: gray;
+      padding: 12px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="left">Somajit Portfolio</div>
+      <div class="right">
+        <ul>
+          <!-- ✅ Now go to new pages -->
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="Work.html">Work</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="firstsection">
+      <div class="leftsection">
+        Hii, My Name is <span class="purple">Somajit</span>
+        <div>and I am a passionate</div>
+        <span id="element"></span>
+        <div class="buttons">
+          <a href="https://github.com/somajitkhatua" target="_blank" class="btn">🌐 GitHub</a>
+          <a href="https://www.linkedin.com/in/somajit-khatua-46a5a02a6" target="_blank" class="btn">💼 LinkedIn</a>
+        </div>
+      </div>
+      <div class="rightsection">
+        <img src="soma.jpg" alt="profile">
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- About -->
+    <section id="about" class="fade-in">
+      <h2>About Me</h2>
+      <p>
+        I’m Somajit, a creative Web & Java Developer who enjoys building clean, functional, and modern websites with love for coding and design.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- Services -->
+    <section id="services" class="fade-in">
+      <h2>Services</h2>
+      <p>
+        🚀 Web Development | ⚡ Java Development | C Development  
+        I help bring your ideas to life with responsive and user-friendly solutions.
+           </p>
+    </section>
+
+    <hr>
+
+    <!-- Work Experience -->
+    <section id="work" class="secondsection">
+      <span class="text-gray">What I have done so far</span>
+      <h1>Work Experience</h1>
+
+      <div class="timeline">
+        <div class="timeline-item left">
+          <img src="html.png" alt="">
+          <h3>HTML Developer (Fresher)</h3>
+          <p>Basic HTML projects with structured layouts and semantic coding.</p>
+        </div>
+        <div class="timeline-item right">
+          <img src="css.png" alt="">
+          <h3>CSS Developer (Fresher)</h3>
+          <p>Designed responsive layouts with modern CSS techniques.</p>
+        </div>
+        <div class="timeline-item left">
+          <img src="java.png" alt="">
+          <h3>Java Developer (Fresher)</h3>
+          <p>Built simple Java projects and backend logic.</p>
+        </div>
+        <div class="timeline-item right">
+          <img src="c.png" alt="">
+          <h3>C Developer (Fresher)</h3>
+          <p>Practiced algorithms and logic building using C language.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in">
+      <h2>Contact</h2>
+      <p>
+        📧 Email: khatuasomajit@gmail.com <br>
+        📱 Phone: +91-9827XXXXX
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer">
+      <div>
+        <h3>Somajit's Developer Portfolio</h3>
+      </div>
+      <div>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="work.html">Work</a></li>
+          <li>Projects</li>
+          <li>Resume</li>
+          <li><a href="https://github.com/somajitkhatua">Github</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-rights">
+      Copyright &#169; | All rights reserved
+    </div>
+  </footer>
+
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Web Developer', 'C Developer', 'Java Developer'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+</body>
+</html>

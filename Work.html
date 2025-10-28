@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      /* Background image */
+      background: url("work.png") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+      text-shadow: 0 0 8px #ffcc00;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 50px;
+      position: relative;
+    }
+
+    section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: skyblue;
+    }
+
+    section p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #f0f0f0;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 60px auto;
+      padding: 0;
+      width: 80%;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #ffcc00;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: left;
+      color: #f0f0f0;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #87cefa, 0 0 40px #87cefa;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .timeline-item img {
+      width: 50px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #87cefa;
+      text-shadow: 0 0 2px #87cefa;
+    }
+
+    .timeline-item p {
+      font-size: 14px;
+      color: lightgray;
+      text-shadow: 0 0 1px #87cefa;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.right {
+      left: 55%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::before {
+        left: 10px;
+      }
+      .timeline-item {
+        width: 90%;
+        left: 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="work">
+    <h1>My Work</h1>
+    <p>Here are some of my projects and past work experiences.</p>
+
+    <div class="timeline">
+      <div class="timeline-item left">
+        <img src="html.png" alt="HTML">
+        <h3>HTML Developer (Fresher)</h3>
+        <p>Basic HTML projects with structured layouts and semantic coding.</p>
+      </div>
+      <div class="timeline-item right">
+        <img src="css.png" alt="CSS">
+        <h3>CSS Developer (Fresher)</h3>
+        <p>Designed responsive layouts with modern CSS techniques.</p>
+      </div>
+      <div class="timeline-item left">
+        <img src="java.png" alt="Java">
+        <h3>Java Developer (Fresher)</h3>
+        <p>Built simple Java projects and backend logic.</p>
+      </div>
+      <div class="timeline-item right">
+        <img src="c.png" alt="C">
+        <h3>C Developer (Fresher)</h3>
+        <p>Practiced algorithms and logic building using C language.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

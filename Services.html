@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url("service.png") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 50px;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .service-box {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+      box-shadow: 0 0 10px rgba(135, 206, 250, 0.3);
+    }
+
+    .service-box h2 {
+      font-size: 1.5rem;
+      color: skyblue;
+      margin-bottom: 10px;
+      text-shadow: 0 0 2px #87cefa; /* subtle glow */
+    }
+
+    .service-box p {
+      font-size: 1rem;
+      color: lightgray;
+      text-shadow: 0 0 1px #87cefa; /* very soft glow */
+    }
+
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #20cefa, 0 0 40px #20cefa, 0 0 60px #20cefa;
+      color: #87cefa;
+    }
+
+    /* Last box takes full width */
+    .service-box:last-child {
+      grid-column: span 2;
+    }
+
+    @media screen and (max-width: 768px) {
+      .services-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h1>My Services</h1>
+    <div class="services-container">
+      <div class="service-box">
+        <h2>⚡ Web Development</h2>
+        <p>I help bring your ideas to life with responsive and user-friendly websites using HTML, CSS, JavaScript, and frameworks.</p>
+      </div>
+      <div class="service-box">
+        <h2>⚡ Java Development</h2>
+        <p>I develop robust Java applications with clean code and efficient performance to solve real-world problems.</p>
+      </div>
+      <div class="service-box">
+        <h2>⚡ C Development</h2>
+        <p>I provide C programming solutions, from problem-solving to optimized applications, ensuring speed and reliability.</p>
+      </div>
+      <div class="service-box">
+        <h2>⚡ Database Management</h2>
+        <p>I design and manage efficient databases with SQL, ensuring data security, integrity, and performance.</p>
+      </div>
+      <div class="service-box">
+        <h2>⚡ UI/UX Design</h2>
+        <p>I design clean, attractive, and easy-to-use interfaces for a smooth user experience.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

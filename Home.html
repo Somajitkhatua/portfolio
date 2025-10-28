@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somajit Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url("about.png") no-repeat center center/cover;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Dark overlay on background */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 26, 64, 0.85); /* deep blue overlay */
+      z-index: -1;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Hero Section */
+    section#home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 40px;
+    }
+
+    section#home h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    section#home h1 span {
+      color: #ffcc00;
+    }
+
+    section#home p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    /* Profile Image */
+    img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.6);
+      margin-bottom: 30px;
+      animation: zoomIn 1.5s ease forwards;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #ffcc00;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid #ffcc00;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffcc00;
+      color: #1a1a40;
+      box-shadow: 0 0 15px #ffcc00;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Hello, I'm <span>Somajit</span></h1>
+    <p>A passionate developer eager to learn, create, and bring ideas to life through Web Development & Java Programming.</p>
+    <img src="soma.jpg" alt="Profile Photo">
+    <div class="buttons">
+      <a href="https://github.com/somajitkhatua" target="_blank" class="btn">🌐 GitHub</a>
+      <a href="https://www.linkedin.com/in/somajit-khatua-46a5a02a6" target="_blank" class="btn">💼 LinkedIn</a>
+    </div>
+  </section>
+</body>
+</html>

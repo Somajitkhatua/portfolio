@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Page</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("Avatar.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 120px 20px 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 400px;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+/* Hover effect: sky blue glow */
+.contact-info:hover, .contact-form:hover {
+  transform: none;
+  box-shadow: 0 0 20px 5px skyblue;
+  border: 1px solid skyblue;
+}
+
+.contact-info h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.contact-info strong {
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+/* Contact Form */
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  color: black;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #ffcc00;
+  box-shadow: 0 0 5px #ffcc00;
+  outline: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: none;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background: #e6b800;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 140px 10px 50px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Contact Section -->
+<div class="container">
+  <div class="contact-info">
+    <h2>Contact</h2>
+    <p>Looking forward to hearing from you</p>
+    <strong>Phone</strong>
+    <p>91-9827880367</p>
+    <strong>Email</strong>
+    <p>khatuasomajit@gmail.com</p>
+  </div>
+
+  <div class="contact-form">
+    <form>
+      <div class="form-row">
+        <div>
+          <label for="fname">First Name *</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+        <div>
+          <label for="lname">Last Name *</label>
+          <input type="text" id="lname" name="lname" required>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div>
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject">
+        </div>
+      </div>
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message"></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
