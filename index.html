@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Somajit Khatua - Java Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Additional styles for clickable project cards */
+        .portfolio-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-link {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <!-- Add this in the <head> section -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22url(%23grad)%22/><defs><linearGradient id=%22grad%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 style=%22stop-color:%23f89820%22/><stop offset=%22100%25%22 style=%22stop-color:%23ffdc00%22/></linearGradient></defs><text x=%2250%25%22 y=%2265%22 font-family=%22Arial, sans-serif%22 font-size=%2240%22 font-weight=%22bold%22 text-anchor=%22middle%22 fill=%22%23050614%22>SK</text></svg>">
+</head>
+
+<body>
+    <!-- Advanced Loading Screen with Pikachu -->
+    <div class="loader-wrapper" id="loader">
+        <div class="pikachu-loader">
+            <div class="loader-orbit"></div>
+            <div class="loader-orbit"></div>
+            <div class="pikachu-character">
+                <div class="pikachu-body">
+                    <div class="pikachu-ear left">
+                        <div class="pikachu-ear-tip"></div>
+                    </div>
+                    <div class="pikachu-ear right">
+                        <div class="pikachu-ear-tip"></div>
+                    </div>
+                    <div class="pikachu-eye left"></div>
+                    <div class="pikachu-eye right"></div>
+                    <div class="pikachu-cheek left"></div>
+                    <div class="pikachu-cheek right"></div>
+                    <div class="pikachu-nose"></div>
+                    <div class="pikachu-mouth"></div>
+                    <div class="lightning-bolt"></div>
+                    <div class="lightning-bolt"></div>
+                    <div class="lightning-bolt"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor Toggle Panel - Moved to right corner -->
+    <div class="cursor-panel">
+        <div class="cursor-title">Choose Cursor</div>
+        <div class="cursor-options">
+            <div class="cursor-option active" id="normalCursor">
+                <i class="fas fa-mouse-pointer cursor-icon"></i>
+                <span class="cursor-label">Normal</span>
+            </div>
+            <div class="cursor-option" id="pikachuCursor">
+                <i class="fas fa-bolt cursor-icon"></i>
+                <span class="cursor-label">Pikachu</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Normal Cursor (Default) -->
+    <div class="cursor-normal" id="cursorNormal"></div>
+
+    <!-- Pikachu Cursor (Hidden by default) -->
+    <div class="cursor-pikachu" id="cursorPikachu" style="display: none;">
+        <div class="pikachu-face">
+            <div class="pikachu-ear left">
+                <div class="pikachu-ear-tip"></div>
+            </div>
+            <div class="pikachu-ear right">
+                <div class="pikachu-ear-tip"></div>
+            </div>
+            <div class="pikachu-eye left"></div>
+            <div class="pikachu-eye right"></div>
+            <div class="pikachu-cheek left"></div>
+            <div class="pikachu-cheek right"></div>
+            <div class="pikachu-nose"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrow prev" id="prevArrow">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="nav-arrow next" id="nextArrow">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Somajit Khatua</div>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skill.html">Skills</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-animation">
+            <div class="gradient-orb"></div>
+            <div class="gradient-orb"></div>
+            <div class="gradient-orb"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">⚡ Java Developer</div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Somajit Khatua</span><br>
+                    Java Developer
+                </h1>
+                <p class="hero-subtitle">
+                    Building robust enterprise applications with Java expertise and passion for clean, efficient code
+                </p>
+                <div class="typing-container">
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor"></span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="pikachu-character">
+                <div class="character-container">
+                    <div class="character-illustration">
+                        <svg class="pikachu-svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Pikachu Character -->
+                            <defs>
+                                <linearGradient id="pikachuGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffdc00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f4b400;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Pikachu Body -->
+                            <ellipse cx="200" cy="280" rx="80" ry="90" fill="url(#pikachuGradient)" />
+
+                            <!-- Pikachu Head -->
+                            <ellipse cx="200" cy="150" rx="70" ry="65" fill="url(#pikachuGradient)" />
+
+                            <!-- Ears -->
+                            <path d="M150 120 L140 60 L160 80 Z" fill="url(#pikachuGradient)" />
+                            <path d="M250 120 L260 60 L240 80 Z" fill="url(#pikachuGradient)" />
+
+                            <!-- Ear Tips -->
+                            <path d="M140 60 L145 75 L150 70 Z" fill="#333" />
+                            <path d="M260 60 L255 75 L250 70 Z" fill="#333" />
+
+                            <!-- Eyes -->
+                            <ellipse cx="175" cy="140" rx="12" ry="15" fill="#333" />
+                            <ellipse cx="225" cy="140" rx="12" ry="15" fill="#333" />
+                            <ellipse cx="177" cy="138" rx="4" ry="5" fill="#fff" />
+                            <ellipse cx="227" cy="138" rx="4" ry="5" fill="#fff" />
+
+                            <!-- Nose -->
+                            <ellipse cx="200" cy="155" rx="4" ry="3" fill="#333" />
+
+                            <!-- Mouth -->
+                            <path d="M190 165 Q200 175 210 165" stroke="#333" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- Cheeks -->
+                            <ellipse cx="160" cy="160" rx="15" ry="12" fill="#ff6b6b" opacity="0.7" />
+                            <ellipse cx="240" cy="160" rx="15" ry="12" fill="#ff6b6b" opacity="0.7" />
+
+                            <!-- Arms -->
+                            <ellipse cx="130" cy="270" rx="25" ry="60" fill="url(#pikachuGradient)"
+                                transform="rotate(-30 130 270)" />
+                            <ellipse cx="270" cy="270" rx="25" ry="60" fill="url(#pikachuGradient)"
+                                transform="rotate(30 270 270)" />
+
+                            <!-- Feet -->
+                            <ellipse cx="160" cy="360" rx="30" ry="20" fill="url(#pikachuGradient)" />
+                            <ellipse cx="240" cy="360" rx="30" ry="20" fill="url(#pikachuGradient)" />
+
+                            <!-- Tail -->
+                            <path d="M280 300 Q320 280 310 240 Q300 220 280 230" fill="url(#pikachuGradient)"
+                                stroke="#f4b400" stroke-width="2" />
+
+                            <!-- Lightning Bolt -->
+                            <path d="M100 100 L110 130 L90 130 L110 160" fill="#f4b400" stroke="#333"
+                                stroke-width="1" />
+
+                            <!-- Laptop with Java Logo -->
+                            <rect x="160" y="320" width="80" height="50" rx="5" fill="#1e293b" />
+                            <rect x="165" y="325" width="70" height="40" fill="#007396" />
+
+                            <!-- Java Logo on Laptop -->
+                            <circle cx="200" cy="345" r="12" fill="#f89820" />
+                            <path d="M195 340 Q200 335 205 340 T205 350 Q200 355 195 350 T195 340" fill="#007396" />
+
+                            <!-- Code floating around -->
+                            <text x="80" y="120" font-family="monospace" font-size="14" fill="#333"
+                                opacity="0.6">Java</text>
+                            <text x="300" y="180" font-family="monospace" font-size="14" fill="#ffdc00"
+                                opacity="0.6">Spring</text>
+                            <text x="70" y="280" font-family="monospace" font-size="14" fill="#333"
+                                opacity="0.6">Pika-code!</text>
+                        </svg>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-code" style="left: 10%; animation-delay: 0s;">public class</div>
+                        <div class="floating-code" style="left: 80%; animation-delay: 2s;">@Override</div>
+                        <div class="floating-code" style="left: 50%; animation-delay: 4s;">Spring Boot</div>
+                        <div class="floating-code" style="left: 20%; animation-delay: 6s;">Pika-coder!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+        <div class="section-header">
+            <div class="section-label">About Me</div>
+            <h2 class="section-title">Java Excellence & Innovation</h2>
+            <p class="section-subtitle">Passionate Java developer with expertise in enterprise applications and modern
+                frameworks</p>
+        </div>
+
+        <div class="about-container">
+            <div class="about-visual">
+                <div class="about-card">
+                    <div class="about-image">
+                        <img src="SOMAJIT.jpg" alt="Somajit Khatua">
+                    </div>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Crafting Enterprise Solutions</h3>
+                <p>With over 2+ years of Java development experience, I specialize in building scalable,
+                    high-performance enterprise applications using latest Java technologies and frameworks.</p>
+                <p>My expertise spans from core Java to Spring ecosystem, web technologies, and full-stack development.
+                    I'm passionate about writing clean, maintainable code that solves real business problems.</p>
+
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Java Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Web Sites</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section  -->
+    <section id="skills" class="reveal">
+        <div class="section-header">
+            <div class="section-label">Technical Stack</div>
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Core technologies and frameworks I work with</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-java"></i></div>
+                <div class="skill-name">Java</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-leaf"></i></div>
+                <div class="skill-name">Spring Boot</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                <div class="skill-name">HTML</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 88%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                <div class="skill-name">CSS</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-js"></i></div>
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 82%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-python"></i></div>
+                <div class="skill-name">Python</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 78%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                <div class="skill-name">MySQL</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                <div class="skill-name">Git</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fab fa-react"></i></div>
+                <div class="skill-name">React</div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="portfolio" class="reveal">
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Web applications and solutions built with modern technologies</p>
+        </div>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="management">Management</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- BPUT Intern Hub -->
+            <div class="portfolio-card" data-category="education" onclick="window.open('https://somajitkhatua.github.io/bput_internhub/', '_blank')">
+                <div class="portfolio-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/42709c75-f19d-4454-92c8-85feb17d7ff1_Screenshot%202025-11-12%20194444.png?auth_key=1862957257-f7c474a7f5614a839cfa484d13db41b5-0-8a67d6b42ed27bffa40a4c26db19af1c" alt="BPUT Intern Hub">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-links">
+                            <a href="https://somajitkhatua.github.io/bput_internhub/" target="_blank" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                            <a href="https://somajitkhatua.github.io/bput_internhub/" target="_blank" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">BPUT Intern Hub</h3>
+                    <p class="portfolio-description">Platform for BPUT students to find internships and connect with
+                        companies</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Genius Game -->
+            <div class="portfolio-card" data-category="game" onclick="window.open('https://somajitkhatua.github.io/jiniusgame/', '_blank')">
+                <div class="portfolio-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/8683cb85-0f17-49c6-998f-2281aaa9136d_Screenshot%202025-11-12%20194636.png?auth_key=1862957257-f7397b1c2fc54cee91cc5fca27869d83-0-a744a788ef75d890c800fa6d17c0c3f6" alt="Genius Game">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-links">
+                            <a href="https://somajitkhatua.github.io/jiniusgame/" target="_blank" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                            <a href="https://somajitkhatua.github.io/jiniusgame/" target="_blank" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Genius Game</h3>
+                    <p class="portfolio-description">Interactive puzzle game designed to challenge and improve cognitive
+                        skills</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employee Management System -->
+            <div class="portfolio-card" data-category="management" onclick="window.open('https://employeemanagement.com', '_blank')">
+                <div class="portfolio-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4206c1c7-6def-4dd3-8872-4f83ecad75cc_Screenshot%202025-11-12%20194814.png?auth_key=1862957257-a2f1f6ae33604ea28ef677d212a9b062-0-7b700841a3b24fed4e07733ae6c5f606" alt="Employee Management System">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-links">
+                            <a href="https://employeemanagement.com" target="_blank" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                            <a href="https://employeemanagement.com" target="_blank" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Employee Management System</h3>
+                    <p class="portfolio-description">Comprehensive employee management solution with attendance,
+                        payroll, and performance tracking</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reveal">
+        <div class="section-header">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Let's Build Together</h2>
+            <p class="section-subtitle">Have a Java project in mind? Let's discuss how we can bring it to life</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>somajitkhatua@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Location</h4>
+                        <p>JagaSinghPur ,Odisha ,India</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer with GitHub and LinkedIn -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/somajitkhatua" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/somajitkhatua" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            </div>
+        <p style="color: var(--gray); margin-top: 20px;">© 2024 Somajit Khatua. Powered by Java ⚡</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <span>Message sent successfully!</span>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

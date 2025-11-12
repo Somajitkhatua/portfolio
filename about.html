@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Somajit Khatua - Java Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for about page */
+        .about-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--pikachu));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(5, 6, 20, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+        }
+
+        .nav-arrow:hover {
+            background: rgba(248, 152, 32, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-arrow i {
+            color: var(--pikachu);
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-arrow:hover i {
+            color: var(--primary);
+        }
+
+        .nav-arrow.prev {
+            left: 20px;
+        }
+
+        .nav-arrow.next {
+            right: 20px;
+        }
+
+        .nav-arrow.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .nav-arrow.disabled:hover {
+            background: rgba(5, 6, 20, 0.8);
+            border-color: var(--border);
+            transform: translateY(-50%) scale(1);
+        }
+
+        .nav-arrow.disabled i {
+            color: var(--gray);
+        }
+
+        /* Mobile Navigation Arrows */
+        @media (max-width: 768px) {
+            .nav-arrow {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nav-arrow.prev {
+                left: 10px;
+            }
+            
+            .nav-arrow.next {
+                right: 10px;
+            }
+            
+            .nav-arrow i {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="about-page">
+        <!-- Cursor Toggle Panel - Moved to right corner -->
+        <div class="cursor-panel">
+            <div class="cursor-title">Choose Cursor</div>
+            <div class="cursor-options">
+                <div class="cursor-option active" id="normalCursor">
+                    <i class="fas fa-mouse-pointer cursor-icon"></i>
+                    <span class="cursor-label">Normal</span>
+                </div>
+                <div class="cursor-option" id="pikachuCursor">
+                    <i class="fas fa-bolt cursor-icon"></i>
+                    <span class="cursor-label">Pikachu</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Normal Cursor (Default) -->
+        <div class="cursor-normal" id="cursorNormal"></div>
+
+        <!-- Navigation Arrows -->
+        <div class="nav-arrow prev" id="prevArrow">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="nav-arrow next" id="nextArrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="logo">Somajit Khatua</div>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skill.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <!-- About Section -->
+            <section id="about" class="reveal">
+                <div class="section-header">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-title">Java Excellence & Innovation</h2>
+                    <p class="section-subtitle">Passionate Java developer with expertise in enterprise applications and modern frameworks</p>
+                </div>
+
+                <div class="about-container">
+                    <div class="about-visual">
+                        <div class="about-card">
+                            <div class="about-image">
+                                <img src="SOMAJIT.jpg" alt="Somajit Khatua">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Crafting Enterprise Solutions</h3>
+                        <p>With over 2+ years of Java development experience, I specialize in building scalable,
+                            high-performance enterprise applications using latest Java technologies and frameworks.</p>
+                        <p>My expertise spans from core Java to Spring ecosystem, web technologies, and full-stack development.
+                            I'm passionate about writing clean, maintainable code that solves real business problems.</p>
+
+                        <div class="about-stats">
+                            <div class="stat-card">
+                                <div class="stat-number" data-target="10">10+</div>
+                                <div class="stat-label">Java Projects</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-target="10">10+</div>
+                                <div class="stat-label">Web Sites</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-target="2">2+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with GitHub and LinkedIn -->
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/somajitkhatua" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/somajitkhatua" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p style="color: var(--gray); margin-top: 20px;">© 2024 Somajit Khatua. Powered by Java and ⚡</p>
+        </footer>
+    </div>
+
+    <script>
+        // Cursor Toggle Panel
+        const normalCursorBtn = document.getElementById('normalCursor');
+        const pikachuCursorBtn = document.getElementById('pikachuCursor');
+        const cursorNormal = document.getElementById('cursorNormal');
+        const cursorPikachu = document.getElementById('cursorPikachu');
+
+        normalCursorBtn.addEventListener('click', () => {
+            normalCursorBtn.classList.add('active');
+            pikachuCursorBtn.classList.remove('active');
+
+            cursorNormal.style.display = 'block';
+            cursorPikachu.style.display = 'none';
+
+            // Update cursor tracking
+            updateCursorTracking('normal');
+        });
+
+        pikachuCursorBtn.addEventListener('click', () => {
+            pikachuCursorBtn.classList.add('active');
+            normalCursorBtn.classList.remove('active');
+
+            cursorNormal.style.display = 'none';
+            cursorPikachu.style.display = 'block';
+
+            // Update cursor tracking
+            updateCursorTracking('pikachu');
+        });
+
+        // Cursor Tracking Function
+        function updateCursorTracking(type) {
+            // Remove existing event listeners
+            document.removeEventListener('mousemove', handleNormalCursor);
+            document.removeEventListener('mousemove', handlePikachuCursor);
+
+            // Add appropriate event listeners
+            if (type === 'normal') {
+                document.addEventListener('mousemove', handleNormalCursor);
+            } else if (type === 'pikachu') {
+                document.addEventListener('mousemove', handlePikachuCursor);
+            }
+        }
+
+        // Normal Cursor Handler
+        function handleNormalCursor(e) {
+            cursorNormal.style.left = e.clientX + 'px';
+            cursorNormal.style.top = e.clientY + 'px';
+        }
+
+        // Pikachu Cursor Handler
+        function handlePikachuCursor(e) {
+            cursorPikachu.style.left = e.clientX + 'px';
+            cursorPikachu.style.top = e.clientY + 'px';
+        }
+
+        // Initialize with normal cursor
+        updateCursorTracking('normal');
+
+        // Add hover effect to interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .skill-card, .portfolio-card, .stat-card, .contact-item');
+        interactiveElements.forEach(elem => {
+            elem.addEventListener('mouseenter', () => {
+                if (cursorNormal.style.display !== 'none') {
+                    cursorNormal.classList.add('hover');
+                }
+                if (cursorPikachu.style.display !== 'none') {
+                    cursorPikachu.classList.add('hover');
+                }
+            });
+            elem.addEventListener('mouseleave', () => {
+                if (cursorNormal.style.display !== 'none') {
+                    cursorNormal.classList.remove('hover');
+                }
+                if (cursorPikachu.style.display !== 'none') {
+                    cursorPikachu.classList.remove('hover');
+                }
+            });
+        });
+
+        // Navigation Arrows - Fixed implementation
+        const pages = ['index.html', 'about.html', 'skill.html', 'project.html', 'contact.html'];
+        
+        // Function to get current page index
+        function getCurrentPageIndex() {
+            const path = window.location.pathname;
+            const page = path.substring(path.lastIndexOf('/') + 1);
+            
+            // Handle empty path (root directory)
+            if (!page || page === '/') {
+                return 0; // Default to index.html
+            }
+            
+            // Find the page in our pages array
+            for (let i = 0; i < pages.length; i++) {
+                if (pages[i] === page) {
+                    return i;
+                }
+            }
+            
+            // If not found, default to index.html
+            return 0;
+        }
+        
+        const currentIndex = getCurrentPageIndex();
+        const prevArrow = document.getElementById('prevArrow');
+        const nextArrow = document.getElementById('nextArrow');
+
+        function updateArrows() {
+            // Update previous arrow
+            if (currentIndex === 0) {
+                prevArrow.classList.add('disabled');
+            } else {
+                prevArrow.classList.remove('disabled');
+            }
+
+            // Update next arrow
+            if (currentIndex === pages.length - 1) {
+                nextArrow.classList.add('disabled');
+            } else {
+                nextArrow.classList.remove('disabled');
+            }
+        }
+
+        function navigateToPage(index) {
+            if (index < 0 || index >= pages.length) return;
+            
+            // Add a small delay to ensure the visual feedback is seen
+            setTimeout(() => {
+                window.location.href = pages[index];
+            }, 100);
+        }
+
+        prevArrow.addEventListener('click', () => {
+            if (!prevArrow.classList.contains('disabled')) {
+                navigateToPage(currentIndex - 1);
+            }
+        });
+
+        nextArrow.addEventListener('click', () => {
+            if (!nextArrow.classList.contains('disabled')) {
+                navigateToPage(currentIndex + 1);
+            }
+        });
+
+        // Initialize arrows
+        updateArrows();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Reveal on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Initial check on page load
+        setTimeout(() => {
+            revealOnScroll();
+        }, 100);
+
+        // Touch device optimizations
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+        }
+    </script>
+</body>
+</html>

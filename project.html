@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Somajit Khatua - Java Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Cursor Toggle Panel - Moved to right corner -->
+    <div class="cursor-panel">
+        <div class="cursor-title">Choose Cursor</div>
+        <div class="cursor-options">
+            <div class="cursor-option active" id="normalCursor">
+                <i class="fas fa-mouse-pointer cursor-icon"></i>
+                <span class="cursor-label">Normal</span>
+            </div>
+            <div class="cursor-option" id="pikachuCursor">
+                <i class="fas fa-bolt cursor-icon"></i>
+                <span class="cursor-label">Pikachu</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Normal Cursor (Default) -->
+    <div class="cursor-normal" id="cursorNormal"></div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Somajit Khatua</div>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skill.html">Skills</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+             <!-- Project Section -->
+    <section id="portfolio" class="reveal">
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Web applications and solutions built with modern technologies</p>
+        </div>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="management">Management</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- BPUT Intern Hub -->
+            <div class="portfolio-card" data-category="education" onclick="window.open('https://somajitkhatua.github.io/bput_internhub/', '_blank')">
+                <div class="portfolio-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/42709c75-f19d-4454-92c8-85feb17d7ff1_Screenshot%202025-11-12%20194444.png?auth_key=1862957257-f7c474a7f5614a839cfa484d13db41b5-0-8a67d6b42ed27bffa40a4c26db19af1c" alt="BPUT Intern Hub">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-links">
+                            <a href="https://somajitkhatua.github.io/bput_internhub/" target="_blank" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                            <a href="https://somajitkhatua.github.io/bput_internhub/" target="_blank" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">BPUT Intern Hub</h3>
+                    <p class="portfolio-description">Platform for BPUT students to find internships and connect with
+                        companies</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Genius Game -->
+            <div class="portfolio-card" data-category="game" onclick="window.open('https://somajitkhatua.github.io/jiniusgame/', '_blank')">
+                <div class="portfolio-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/8683cb85-0f17-49c6-998f-2281aaa9136d_Screenshot%202025-11-12%20194636.png?auth_key=1862957257-f7397b1c2fc54cee91cc5fca27869d83-0-a744a788ef75d890c800fa6d17c0c3f6" alt="Genius Game">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-links">
+                            <a href="https://somajitkhatua.github.io/jiniusgame/" target="_blank" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                            <a href="https://somajitkhatua.github.io/jiniusgame/" target="_blank" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Genius Game</h3>
+                    <p class="portfolio-description">Interactive puzzle game designed to challenge and improve cognitive
+                        skills</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employee Management System -->
+            <div class="portfolio-card" data-category="management" onclick="window.open('https://employeemanagement.com', '_blank')">
+                <div class="portfolio-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/4206c1c7-6def-4dd3-8872-4f83ecad75cc_Screenshot%202025-11-12%20194814.png?auth_key=1862957257-a2f1f6ae33604ea28ef677d212a9b062-0-7b700841a3b24fed4e07733ae6c5f606" alt="Employee Management System">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-links">
+                            <a href="https://employeemanagement.com" target="_blank" class="portfolio-link"><i class="fas fa-eye"></i></a>
+                            <a href="https://employeemanagement.com" target="_blank" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Employee Management System</h3>
+                    <p class="portfolio-description">Comprehensive employee management solution with attendance,
+                        payroll, and performance tracking</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+            <div class="social-links">
+                <a href="https://github.com/somajitkhatua" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/somajitkhatua" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p style="color: var(--gray); margin-top: 20px;">© 2024 Somajit Khatua. Powered by Java and ⚡</p>
+        </footer>
+        
+    <script src="script.js"></script>
+
+</body>
+
+</html>
